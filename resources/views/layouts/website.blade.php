@@ -36,18 +36,18 @@
         <div class="row">
             <div class="col-lg-9 text-right text-white">
                 <div class="header__contact_info">
-                    <i class="fa fa-envelope">&nbsp;&nbsp;hola@email.com  &nbsp;&nbsp;&nbsp;&nbsp;</i>
-                    <i class="fas fa fa-mobile">&nbsp;&nbsp;+880110101123</i>
+                    @if($setting->email)<a href="mailto:{{ $setting->email }}"><i class="fa fa-envelope"></i> {{ $setting->email }}</a>@endif
+                    @if($setting->phone)<a href="callto:{{ $setting->phone }}"><i class="fa fa-phone"></i>{{ $setting->phone }}</a>@endif
                 </div>
             </div>
             <div class="col-lg-3 text-right">
                 <div class="header__nav__option_social">
                     <div class="header__nav__social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        @if($setting->facebook)<a href="{{ $setting->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>@endif
+                        @if($setting->twitter)<a href="{{ $setting->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>@endif
+                        @if($setting->linkedin)<a href="{{ $setting->linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>@endif
+                        @if($setting->instagram)<a href="{{ $setting->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>@endif
+                        @if($setting->youtube)<a href="{{ $setting->youtube }}" target="_blank"><i class="fa fa-youtube-play"></i></a>@endif
                     </div>
                 </div>
             </div>
@@ -104,11 +104,11 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="footer__top__social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        @if($setting->facebook)<a href="{{ $setting->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>@endif
+                        @if($setting->twitter)<a href="{{ $setting->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>@endif
+                        @if($setting->linkedin)<a href="{{ $setting->linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>@endif
+                        @if($setting->instagram)<a href="{{ $setting->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>@endif
+                        @if($setting->youtube)<a href="{{ $setting->youtube }}" target="_blank"><i class="fa fa-youtube-play"></i></a>@endif
                     </div>
                 </div>
             </div>
@@ -118,19 +118,18 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__option__item">
                         <h5>About us</h5>
-                        <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
-                            production company specializing.</p>
-                        <a href="#" class="read__more">Read more <span class="arrow_right"></span></a>
+                        <p>{!! $setting->about_site !!} </p>
+                        <a href="{{ route('about') }}" class="read__more">Read more <span class="arrow_right"></span></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-3">
                     <div class="footer__option__item">
                         <h5>Who we are</h5>
                         <ul>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Carrers</a></li>
+                            <li><a href="#">Governing Body</a></li>
+                            <li><a href="#">Members</a></li>
                             <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Locations</a></li>
+                            <li><a href="#">Become Member</a></li>
                         </ul>
                     </div>
                 </div>
@@ -138,10 +137,10 @@
                     <div class="footer__option__item">
                         <h5>Our work</h5>
                         <ul>
-                            <li><a href="#">Feature</a></li>
-                            <li><a href="#">Latest</a></li>
-                            <li><a href="#">Browse Archive</a></li>
-                            <li><a href="#">Video for web</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Activites</a></li>
+                            <!--<li><a href="#">Video for web</a></li>-->
                         </ul>
                     </div>
                 </div>

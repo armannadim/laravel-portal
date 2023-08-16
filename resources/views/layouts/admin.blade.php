@@ -165,9 +165,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
-            <img src="{{ asset('admin') }}/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <a href="{{ route('home') }}" class="brand-link">
+            <img src="{{ asset($setting->logo) }}" alt="Site Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">BSIF</span>
         </a>
 
         <!-- Sidebar -->
@@ -175,7 +175,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{ asset($user->image) }}" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{ asset(\Illuminate\Support\Facades\Auth::user()->image) }}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="{{ route('user.profile', \Illuminate\Support\Facades\Auth::user()->id ) }}" class="d-block">{{ \Illuminate\Support\Facades\Auth::user()->name }}</a>
@@ -239,6 +239,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <i class="nav-icon fas fa-user-alt"></i>
                             <p>
                                 User
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item mt-auto ">
+                        <a href="{{ route('setting.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-toolbox"></i>
+                            <p>
+                                Site Settings
                             </p>
                         </a>
                     </li>

@@ -46,11 +46,13 @@ Route::group(['prefix'=> 'admin', 'middleware' => ['auth']], function (){
     Route::resource('tag',\App\Http\Controllers\TagController::class);
     Route::resource('post',\App\Http\Controllers\PostController::class);
     Route::resource('user',\App\Http\Controllers\UserController::class);
-    Route::get('profile/', '\App\Http\Controllers\UserController@profile')->name('user.profile');
-    Route::post('profile/update', '\App\Http\Controllers\UserController@profile_update')->name('user.profile.update');
+    Route::get('profile/', [\App\Http\Controllers\UserController::class, 'profile'])->name('user.profile');
+    Route::post('profile/update', [\App\Http\Controllers\UserController::class, 'profile_update'])->name('user.profile.update');
+    Route::get('setting', [\App\Http\Controllers\SettingController::class, 'edit'])->name('setting.index');
+    Route::post('setting', [\App\Http\Controllers\SettingController::class, 'update'])->name('setting.update');
 });
 
-
+/*
 Route::get('/test', function (){
    $posts = \App\Models\Post::all();
    $id = 1;
@@ -60,4 +62,4 @@ Route::get('/test', function (){
        $id++;
    }
    return $posts;
-});
+});*/

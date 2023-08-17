@@ -31,7 +31,11 @@ Route::get('/contact', [FrontEndController::class,'contact'])->name('contact');
 Route::get('/post/{slug}', [FrontEndController::class,'post'])->name('blog.details');
 Route::get('/members', [FrontEndController::class,'members'])->name('members');
 Route::get('/governing_body', [FrontEndController::class,'governingBody'])->name('governing_body');
-Route::get('/become-member', [FrontEndController::class,'becomeMember'])->name('become-member');
+//Route::get('/become-member', [FrontEndController::class,'becomeMember'])->name('become-member');
+Route::get('/membership-info', [FrontEndController::class,'membershipInfo'])->name('website.membership-info');
+Route::get('/photo-gallery', [FrontEndController::class,'photogallery'])->name('website.photogallery');
+Route::get('/faq', [FrontEndController::class,'faq'])->name('website.faq');
+Route::get('/resources', [FrontEndController::class,'resources'])->name('website.resources');
 
 Route::post('send_message',[FrontEndController::class,'send_message'] )->name('send_message');
 
@@ -53,7 +57,7 @@ Route::group(['prefix'=> 'admin', 'middleware' => ['auth']], function (){
     Route::resource('post',\App\Http\Controllers\PostController::class);
     Route::resource('user',\App\Http\Controllers\UserController::class);
     Route::resource('member',\App\Http\Controllers\MemberController::class);
-
+    Route::resource('faq', \App\Http\Controllers\FaqController::class);
 
     Route::get('profile/', [\App\Http\Controllers\UserController::class, 'profile'])->name('user.profile');
     Route::post('profile/update', [\App\Http\Controllers\UserController::class, 'profile_update'])->name('user.profile.update');

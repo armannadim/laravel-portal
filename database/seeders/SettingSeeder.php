@@ -15,7 +15,17 @@ class SettingSeeder extends Seeder
     {
         Setting::factory()->create([
            'site_name' => 'BSIF Portal',
-           'copyright' => 'Copyright 2023, Bangladesh Safe Internet Forum',
+           'copyright' => 'Copyright © 2023. All rights reserved.',
+            'about_site' => 'Lorem Ipsum is simply dummy text of the printing a...',
+            'address' => 'Somewhere on the earth',
+            'phone' => '0310354345',
+            'email' => 'myemail@email.com',
+            'facebook' => 'https://facebook.com',
+            'twitter' => 'https://twitter.com',
+            'instagram' => 'https://instagram.com',
+            'linkedin' => 'https://linkedin.com',
+            'youtube' => 'https://youtube.com',
+            'logo' => 'storage/setting/1692215307.png'
         ]);
     }
 }

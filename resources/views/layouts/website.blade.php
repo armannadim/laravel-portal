@@ -1,189 +1,194 @@
-<!DOCTYPE html>
-<html lang="zxx">
-
+<!-- /*
+* Template Name: Financing
+* Template Author: Untree.co
+* Template URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Videograph Template">
-    <meta name="keywords" content="Videograph, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Videograph | Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Untree.co">
+    <link rel="shortcut icon" href="favicon.png">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap5" />
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('template') }}/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ asset('template') }}/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ asset('template') }}/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="{{ asset('template') }}/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ asset('template') }}/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="{{ asset('template') }}/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ asset('template') }}/css/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ asset('template') }}/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="{{ asset('template') }}/css/tiny-slider.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/css/aos.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/css/glightbox.min.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/css/style.css">
+
+    <link rel="stylesheet" href="{{ asset('template') }}/css/flatpickr.min.css">
+
+
+    <title>Financing &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
 </head>
-
 <body>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
+
+<div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+            <span class="icofont-close js-menu-toggle"></span>
+        </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
 </div>
 
-<!-- Header Section Begin -->
-<header class="header">
+<nav class="site-nav">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-9 text-right text-white">
-                <div class="header__contact_info">
-                    @if($setting->email)<a href="mailto:{{ $setting->email }}"><i class="fa fa-envelope"></i> {{ $setting->email }}</a>@endif
-                    @if($setting->phone)<a href="callto:{{ $setting->phone }}"><i class="fa fa-phone"></i>{{ $setting->phone }}</a>@endif
-                </div>
-            </div>
-            <div class="col-lg-3 text-right">
-                <div class="header__nav__option_social">
-                    <div class="header__nav__social">
-                        @if($setting->facebook)<a href="{{ $setting->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>@endif
-                        @if($setting->twitter)<a href="{{ $setting->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>@endif
-                        @if($setting->linkedin)<a href="{{ $setting->linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>@endif
-                        @if($setting->instagram)<a href="{{ $setting->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>@endif
-                        @if($setting->youtube)<a href="{{ $setting->youtube }}" target="_blank"><i class="fa fa-youtube-play"></i></a>@endif
+        <div class="menu-bg-wrap">
+            <div class="site-navigation">
+                <div class="row g-0 align-items-center">
+                    <div class="col-2">
+                        <a href="index.html" class="logo m-0 float-start">{{ $setting->site_name }}</a>
+                    </div>
+                    <div class="col-8 text-center ">
+                        <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
+                            <li class="active"><a href="{{ route('home') }}">Home</a></li>
+                            <li class="has-children">
+                                <a href="#">Organization</a>
+                                <ul class="dropdown">
+                                    <li><a href="{{ route('about') }}">About Us</a></li>
+                                    <li><a href="{{ route('governing_body') }}">Governing Body</a></li>
+                                    <li><a href="{{ route('members') }}">Members</a></li>
+                                    <li><a href="{{ route('members') }}">Membership Info</a></li>
+                                    <li><a href="{{ route('website.faq') }}">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ route('website.photogallery') }}">Photo Gallery</a></li>
+                            <li><a href="{{ route('website.resources') }}">Resources</a></li>
+                            <li><a href="{{ route('news') }}">News</a></li>
+                            <li><a href="{{ route('activities') }}">Activities</a></li>
+                            <li><a href="{{ route('blog') }}">Blog</a></li>
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-2 text-end">
+                        <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+                            <span></span>
+                        </a>
+
+                        <a href="#" class="call-us d-flex align-items-center">
+                            <span class="icon-phone"></span>
+                            <span>{{ $setting->phone }}</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-2">
-                <div class="header__logo">
-                    <a href="./index.html"><img src="{{ asset('template') }}/img/logo.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-lg-10">
-                <div class="header__nav__option">
-                    <nav class="header__nav__menu mobile-menu">
-                        <ul>
-                            <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="#">Organization</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./portfolio.html">Governing Body Members</a></li>
-                                    <li><a href="./blog.html">Members</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{{ route('about') }}">About</a></li>
-                            <li><a href="./portfolio.html">Portfolio</a></li>
-                            <li><a href="./services.html">Activites</a></li>
-                            <li><a href="{{ route('blog') }}">Blog</a></li>
-
-                            <li><a href="{{ route('contact') }}">Contact</a></li>
-                        </ul>
-                    </nav>
-
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu-wrap"></div>
     </div>
-</header>
-<!-- Header End -->
-
-
+</nav>
 <!-- Content of the website -->
 @yield('content')
 
-<!-- Content section closed -->
-<!-- Footer Section Begin -->
-<footer class="footer">
+<div class="section">
     <div class="container">
-        <div class="footer__top">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="footer__top__logo">
-                        <a href="#"><img src="{{ asset('template') }}/img/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="footer__top__social">
-                        @if($setting->facebook)<a href="{{ $setting->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>@endif
-                        @if($setting->twitter)<a href="{{ $setting->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>@endif
-                        @if($setting->linkedin)<a href="{{ $setting->linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>@endif
-                        @if($setting->instagram)<a href="{{ $setting->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>@endif
-                        @if($setting->youtube)<a href="{{ $setting->youtube }}" target="_blank"><i class="fa fa-youtube-play"></i></a>@endif
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer__option">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="footer__option__item">
-                        <h5>About us</h5>
-                        <p>{!! $setting->about_site !!} </p>
-                        <a href="{{ route('about') }}" class="read__more">Read more <span class="arrow_right"></span></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-3">
-                    <div class="footer__option__item">
-                        <h5>Who we are</h5>
-                        <ul>
-                            <li><a href="#">Governing Body</a></li>
-                            <li><a href="#">Members</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Become Member</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-3">
-                    <div class="footer__option__item">
-                        <h5>Our work</h5>
-                        <ul>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Activites</a></li>
-                            <!--<li><a href="#">Video for web</a></li>-->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__option__item">
-                        <h5>Newsletter</h5>
-                        <p>Videoprah is an award-winning, full-service production company specializing.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Email">
-                            <button type="submit"><i class="fa fa-send"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer__copyright">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <p class="footer__copyright__text">Copyright &copy;
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script>
-                        All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                    </p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </div>
-            </div>
-        </div>
+
     </div>
-</footer>
-<!-- Footer Section End -->
+</div>
 
-<!-- Js Plugins -->
-<script src="{{ asset('template') }}/js/jquery-3.3.1.min.js"></script>
-<script src="{{ asset('template') }}/js/bootstrap.min.js"></script>
-<script src="{{ asset('template') }}/js/jquery.magnific-popup.min.js"></script>
-<script src="{{ asset('template') }}/js/mixitup.min.js"></script>
-<script src="{{ asset('template') }}/js/masonry.pkgd.min.js"></script>
-<script src="{{ asset('template') }}/js/jquery.slicknav.js"></script>
-<script src="{{ asset('template') }}/js/owl.carousel.min.js"></script>
-<script src="{{ asset('template') }}/js/main.js"></script>
+<div class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="widget">
+                    <h3>About</h3>
+                    <p>{!! $setting->about_site !!}</p>
+                </div> <!-- /.widget -->
+
+            </div> <!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <div class="widget">
+                    <h3>Organization</h3>
+                    <ul class="list-unstyled float-start links">
+                        <li><a href="{{ route('governing_body') }}">Governing Body</a></li>
+                        <li><a href="{{ route('members') }}">Members</a></li>
+                        <li><a href="{{ route('contact') }}">Contact us</a></li>
+                        <li><a href="{{ route('website.membership-info') }}">Membership Info</a></li>
+                    </ul>
+                    <!--<ul class="list-unstyled float-start links">
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Creative</a></li>
+                    </ul>-->
+                </div> <!-- /.widget -->
+            </div> <!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <div class="widget">
+                    <!--<h3>Navigation</h3>
+                    <ul class="list-unstyled links mb-4">
+                        <li><a href="#">Our Vision</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>-->
+                    <div class="widget">
+                        <address>43 Raymouth Rd. Baltemoer, <br> London 3910</address>
+                        <ul class="list-unstyled links">
+                            <li><a href="tel://{{ $setting->phone }}">{{ $setting->phone }}</a></li>
+                            <li><a href="mailto:{{ $setting->phone }}">{{ $setting->email }}</a></li>
+                        </ul>
+                    </div> <!-- /.widget -->
+                    <h3>Social</h3>
+                    <ul class="list-unstyled social">
+                        <li>@if($setting->facebook)<a href="{{ $setting->facebook }}" target="_blank"><span class="icon-facebook"></span></a>@endif</li>
+                        <li>@if($setting->twitter)<a href="{{ $setting->twitter }}" target="_blank"><span class="icon-twitter"></span></a>@endif</li>
+                        <li>@if($setting->linkedin)<a href="{{ $setting->linkedin }}" target="_blank"><span class="icon-linkedin"></span></a>@endif</li>
+                        <li>@if($setting->instagram)<a href="{{ $setting->instagram }}" target="_blank"><span class="icon-instagram"></span></a>@endif</li>
+                        <li>@if($setting->youtube)<a href="{{ $setting->youtube }}" target="_blank"><span class="icon-youtube"></span></a>@endif</li>
+                    </ul>
+                </div> <!-- /.widget -->
+            </div> <!-- /.col-lg-4 -->
+        </div> <!-- /.row -->
+
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <!--
+          **==========
+          NOTE:
+          Please don't remove this copyright link unless you buy the license here https://untree.co/license/
+          **==========
+        -->
+
+                <p>{{ $setting->copyright }}</p>
+            </div>
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.site-footer -->
+
+<!-- Preloader -->
+<div id="overlayer"></div>
+<div class="loader">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+
+<script src="{{ asset('template') }}/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('template') }}/js/tiny-slider.js"></script>
+
+<script src="{{ asset('template') }}/js/flatpickr.min.js"></script>
+
+
+<script src="{{ asset('template') }}/js/aos.js"></script>
+<script src="{{ asset('template') }}/js/glightbox.min.js"></script>
+<script src="{{ asset('template') }}/js/navbar.js"></script>
+<script src="{{ asset('template') }}/js/counter.js"></script>
+<script src="{{ asset('template') }}/js/custom.js"></script>
 </body>
-
 </html>

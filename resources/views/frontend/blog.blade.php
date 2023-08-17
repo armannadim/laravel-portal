@@ -1,77 +1,50 @@
 @extends('layouts.website')
 @section('content')
-    <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option spad set-bg" data-setbg="{{ asset('template') }}/img/breadcrumb-bg.jpg">
+    <div class="hero overlay inner-page">
+        <img src="{{ asset('template') }}/images/blob.svg" alt="" class="img-fluid blob">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Our Blog</h2>
-                        <div class="breadcrumb__links">
-                            <a href="{{ route('home') }}">Home</a>
-                            <span>Blog</span>
-                        </div>
-                    </div>
+            <div class="row align-items-center justify-content-center text-center pt-5">
+                <div class="col-lg-6">
+                    <h1 class="heading text-white mb-3" data-aos="fade-up" >{{ $content_type }}</h1>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Breadcrumb End -->
 
-    <!-- Blog Section Begin -->
-    <section class="blog spad">
+    <div class="section sec-news">
         <div class="container">
             <div class="row">
                 @foreach($posts as $post)
-                    <style rel="stylesheet">
-                        .blog__item{{ $post->id }}:hover {
-                            border: 1px solid transparent !important;
-                            background: url({{ asset($post->image) }}) no-repeat;
-                            background-color: #cccccc; /* Used if the image is unavailable */
-                            background-position: center; /* Center the image */
-                            background-repeat: no-repeat; /* Do not repeat the image */
-                            background-size: cover; /* Resize the background image to cover the entire container */
-                            padding: 0;
-                        }
-                        .blog__item_hover:hover {
-                            background-color: #000000;
-                            background:rgba(0,0,0,0.5);
-                            width:100%;
-                            height: 100%;
-                            padding: 40px 48px 35px 30px;
-                        }
-                    </style>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-
-                    <div class="blog__item blog__item{{$post->id}}">
-                        <div class="blog__item_hover">
-                        <a href="{{ route('blog.details',['slug' => $post->slug]) }}"><h4>{{ $post->title }}</h4></a>
-                        <span class="text-white">Author: {{ $post->user->name }}</span>
-                        <ul>
-                            <li>{{ $post->published_at->format('M d, Y') }}</li>
-                            <li>05 Comment</li>
-                            <li class="badge badge-primary">{{ $post->category->name }}</li>
-                        </ul>
-                        <p>{{ Str::limit($post->description, 50) }}</p>
-                        <a href="{{ route('blog.details',['slug' => $post->slug]) }}">Read more <span class="arrow_right"></span></a>
-                    </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card post-entry">
+                        <a href="{{ route('blog.details',['slug' => $post->slug]) }}"><img src="{{ asset($post->image) }}" class="card-img-top" alt="Image"></a>
+                        <div class="card-body">
+                            <div><span class="text-uppercase font-weight-bold date">{{ $post->published_at->format('M d, Y') }}</span></div>
+                            <h5 class="card-title"><a href="{{ route('blog.details',['slug' => $post->slug]) }}">{{ Str::limit($post->title, 30) }}</a></h5>
+                            <p>{{ Str::limit($post->description, 100) }} </p>
+                            <p class="mt-5 mb-0"><a href="{{ route('blog.details',['slug' => $post->slug]) }}">Read more</a></p>
+                        </div>
                     </div>
                 </div>
                 @endforeach
+
             </div>
+
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 text-center py-5">
                     {{ $posts->render() }}
-                    <!--<div class="pagination__option blog__pagi">
-                        <a href="#" class="arrow__pagination left__arrow"><span class="arrow_left"></span> Prev</a>
-                        <a href="#" class="number__pagination">1</a>
-                        <a href="#" class="number__pagination">2</a>
-                        <a href="#" class="arrow__pagination right__arrow">Next <span class="arrow_right"></span></a>
-                    </div>-->
+                    <!--<div class="custom-navigation">
+
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <span>...</span>
+                        <a href="#">5</a>
+                        </nav>-->
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Blog Section End -->
 
 @endsection

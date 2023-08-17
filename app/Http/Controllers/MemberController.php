@@ -112,5 +112,6 @@ class MemberController extends Controller
             $member->delete();
             Session::flash('success', 'Member deleted successfully');
         }
+        return redirect()->route('member.index');
     }
 }

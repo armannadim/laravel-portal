@@ -41,19 +41,19 @@
                                             @include('includes.errors')
                                             <input type="hidden" name="id" value="{{ $setting->id }}">
                                             <div class="row">
-                                                <div class="col-6">
+                                                <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="site_name">Site Name</label>
                                                         <input type="text" name="site_name" class="form-control" value="{{  old('site_name', $setting->site_name) }}" placeholder="Enter site name">
                                                     </div>
                                                 </div>
-                                                <div class="col-6">
-                                                    <label for="image">Logo</label>
-                                                    <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" name="logo" id="logo">
-                                                        <label class="custom-file-label" for="logo">Choose file</label>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="address">Address</label>
+                                                        <input type="text" name="address" class="form-control" value="{{  old('site_name', $setting->address) }}" placeholder="Enter site name">
                                                     </div>
                                                 </div>
+
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="facebook">Facebook</label>
@@ -103,6 +103,23 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-8">
+                                                        <label for="image">Logo</label>
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" name="logo" id="logo">
+                                                            <label class="custom-file-label" for="logo">Choose file</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 text-right">
+                                                        <div style="max-width: 100px;max-height: 100px;overflow: hidden;margin-left: auto;">
+                                                            <img src="{{ asset($setting->logo) }}" style="width:100px;height:100px" class="img-fluid img-circle">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <div class="form-group">
                                                 <label for="about_site">Description</label>
                                                 <textarea type="text" name="about_site" class="form-control" placeholder="Description">{{ $setting->about_site }}</textarea>

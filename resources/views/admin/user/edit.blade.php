@@ -51,7 +51,7 @@
                                                 <input type="email" name="email" class="form-control" id="email" value="{{$user->email}}">
                                             </div>
                                             <div class="form-group">
-                                                <label for="password">Email <small class="text-info">Enter password if you want to change.</small></label>
+                                                <label for="password">Password <small class="text-info">Enter password if you want to change.</small></label>
                                                 <input type="password" name="password" class="form-control" id="password" value="">
                                             </div>
                                             <div class="form-group">

@@ -23,11 +23,17 @@ use \App\Http\Controllers\FrontEndController;
 
 Route::get('/', [FrontEndController::class, 'home'])->name('home');
 Route::get('/blog', [FrontEndController::class,'blog'])->name('blog');
+Route::get('/news', [FrontEndController::class,'news'])->name('news');
 Route::get('/about', [FrontEndController::class,'about'])->name('about');
 Route::get('/services', [FrontEndController::class,'services'])->name('services');
-Route::get('/portfolio', [FrontEndController::class,'portfolio'])->name('portfolio');
+Route::get('/activities', [FrontEndController::class,'activities'])->name('activities');
 Route::get('/contact', [FrontEndController::class,'contact'])->name('contact');
 Route::get('/post/{slug}', [FrontEndController::class,'post'])->name('blog.details');
+Route::get('/members', [FrontEndController::class,'members'])->name('members');
+Route::get('/governing_body', [FrontEndController::class,'governingBody'])->name('governing_body');
+Route::get('/become-member', [FrontEndController::class,'becomeMember'])->name('become-member');
+
+Route::post('send_message',[FrontEndController::class,'send_message'] )->name('send_message');
 
 Auth::routes();
 
@@ -46,10 +52,16 @@ Route::group(['prefix'=> 'admin', 'middleware' => ['auth']], function (){
     Route::resource('tag',\App\Http\Controllers\TagController::class);
     Route::resource('post',\App\Http\Controllers\PostController::class);
     Route::resource('user',\App\Http\Controllers\UserController::class);
+    Route::resource('member',\App\Http\Controllers\MemberController::class);
+
+
     Route::get('profile/', [\App\Http\Controllers\UserController::class, 'profile'])->name('user.profile');
     Route::post('profile/update', [\App\Http\Controllers\UserController::class, 'profile_update'])->name('user.profile.update');
     Route::get('setting', [\App\Http\Controllers\SettingController::class, 'edit'])->name('setting.index');
     Route::post('setting', [\App\Http\Controllers\SettingController::class, 'update'])->name('setting.update');
+    Route::get('contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
+    Route::get('contact/{id}', [\App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
+    Route::delete('contact/{id}', [\App\Http\Controllers\ContactController::class, 'destroy'])->name('contact.destroy');
 });
 
 /*

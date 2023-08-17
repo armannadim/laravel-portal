@@ -234,6 +234,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         </ul>
                     </li>
+
+                    <li class="nav-item mt-auto ">
+                        <a href="{{ route('member.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                Member
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item mt-auto ">
+                        <a href="{{ route('contact.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-envelope"></i>
+                            <p>
+                                Messages
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-item mt-auto ">
                         <a href="{{ route('user.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-user-alt"></i>

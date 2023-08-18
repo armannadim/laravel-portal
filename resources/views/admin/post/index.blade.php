@@ -84,6 +84,9 @@
                             </table>
                         </div>
                         <!-- /.card-body -->
+                        <div class="card-footer">
+                            {{ $posts->links() }}
+                        </div>
                     </div>
                 </div>
                 <!-- /.col-md-6 -->

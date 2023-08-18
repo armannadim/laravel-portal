@@ -73,6 +73,9 @@
                             </table>
                         </div>
                         <!-- /.card-body -->
+                        <div class="card-footer">
+                            {{ $messages->links() }}
+                        </div>
                     </div>
                 </div>
                 <!-- /.col-md-6 -->

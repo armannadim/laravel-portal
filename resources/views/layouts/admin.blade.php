@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Starter</title>
+    <title>BSIF | Admin Panel</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -30,12 +30,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contact</a>
             </li>
         </ul>
 
@@ -61,102 +55,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                     </form>
                 </div>
-            </li>
-
-            <!-- Messages Dropdown Menu -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-comments"></i>
-                    <span class="badge badge-danger navbar-badge">3</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="{{ asset('admin') }}/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    Brad Diesel
-                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">Call me whenever you can...</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="{{ asset('admin') }}/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    John Pierce
-                                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">I got your message bro</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="{{ asset('admin') }}/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    Nora Silvester
-                                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">The subject goes here</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                </div>
-            </li>
-            <!-- Notifications Dropdown Menu -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-bell"></i>
-                    <span class="badge badge-warning navbar-badge">15</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <span class="dropdown-header">15 Notifications</span>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-envelope mr-2"></i> 4 new messages
-                        <span class="float-right text-muted text-sm">3 mins</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> 8 friend requests
-                        <span class="float-right text-muted text-sm">12 hours</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-file mr-2"></i> 3 new reports
-                        <span class="float-right text-muted text-sm">2 days</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                    <i class="fas fa-expand-arrows-alt"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                    <i class="fas fa-th-large"></i>
-                </a>
             </li>
         </ul>
     </nav>
@@ -199,9 +97,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
-                    <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
+                    <li class="nav-item mt-auto ">
+                        <a href="{{ route('dashboard') }}" class="nav-link {{ (request()->is('admin/dashboard*'))? 'active':'' }}">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link  {{ (request()->is('admin/post*') || request()->is('admin/category*') || request()->is('admin/tag*') )? 'active':'' }}">
+                            <i class="nav-icon fas fa-clipboard"></i>
                             <p>
                                 Blog
                                 <i class="right fas fa-angle-left"></i>
@@ -209,15 +115,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('post.index') }}" class="nav-link">
-                                    <i class="nav-icon fas fa-book"></i>
+                                <a href="{{ route('post.index') }}" class="nav-link {{ (request()->is('admin/post*'))? 'active':'' }}">
+                                    <i class="nav-icon fas fa-pen-square"></i>
                                     <p>
                                         Post
                                     </p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('category.index') }}" class="nav-link">
+                                <a href="{{ route('category.index') }}" class="nav-link {{ (request()->is('admin/category*'))? 'active':'' }}">
                                     <i class="nav-icon fas fa-tags"></i>
                                     <p>
                                         Categories
@@ -225,7 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('tag.index') }}" class="nav-link">
+                                <a href="{{ route('tag.index') }}" class="nav-link {{ (request()->is('admin/tag*'))? 'active':'' }}">
                                     <i class="nav-icon fas fa-tags"></i>
                                     <p>
                                         Tags
@@ -235,7 +141,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                     </li>
                     <li class="nav-item mt-auto ">
-                        <a href="{{ route('faq.index') }}" class="nav-link">
+                        <a href="{{ route('faq.index') }}" class="nav-link {{ (request()->is('admin/faq*'))? 'active':'' }}">
                             <i class="nav-icon fas fa-question"></i>
                             <p>
                                 FAQ
@@ -243,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                     </li>
                     <li class="nav-item mt-auto ">
-                        <a href="{{ route('member.index') }}" class="nav-link">
+                        <a href="{{ route('member.index') }}" class="nav-link {{ (request()->is('admin/member*'))? 'active':'' }}">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Member
@@ -251,7 +157,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                     </li>
                     <li class="nav-item mt-auto ">
-                        <a href="{{ route('contact.index') }}" class="nav-link">
+                        <a href="{{ route('contact.index') }}" class="nav-link {{ (request()->is('admin/contact*'))? 'active':'' }}">
                             <i class="nav-icon fas fa-envelope"></i>
                             <p>
                                 Messages
@@ -259,7 +165,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                     </li>
                     <li class="nav-item mt-auto ">
-                        <a href="{{ route('user.index') }}" class="nav-link">
+                        <a href="{{ route('user.index') }}" class="nav-link {{ (request()->is('admin/user*'))? 'active':'' }}">
                             <i class="nav-icon fas fa-user-alt"></i>
                             <p>
                                 User
@@ -267,10 +173,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                     </li>
                     <li class="nav-item mt-auto ">
-                        <a href="{{ route('setting.index') }}" class="nav-link">
+                        <a href="{{ route('setting.index') }}" class="nav-link {{ (request()->is('admin/setting*'))? 'active':'' }}">
                             <i class="nav-icon fas fa-toolbox"></i>
                             <p>
                                 Site Settings
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">Your account</li>
+                    <li class="nav-item mt-auto ">
+                        <a href="{{ route('user.profile') }}"  class="nav-link {{ (request()->is('admin/profile*'))? 'active':'' }}">
+                            <i class="nav-icon fas fa-user"></i>
+                            <p>
+                                Your profile
                             </p>
                         </a>
                     </li>

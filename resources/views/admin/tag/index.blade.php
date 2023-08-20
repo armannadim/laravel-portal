@@ -73,7 +73,8 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            {{ $tags->links() }}
+                            {!! $tags->withQueryString()->links('pagination::bootstrap-5') !!}
+
                         </div>
                     </div>
                 </div>

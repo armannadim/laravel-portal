@@ -28,7 +28,7 @@
                     <p>{{ Str::limit($member->brief_bio, 300) }} </p>
                 </div>
                 @endforeach
-                {{ $members->render() }}
+                {!! $members->withQueryString()->links('pagination::bootstrap-5') !!}
             </div>
 
         </div>

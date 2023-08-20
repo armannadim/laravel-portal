@@ -85,7 +85,8 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            {{ $posts->links() }}
+                            {!! $posts->withQueryString()->links('pagination::bootstrap-5') !!}
+
                         </div>
                     </div>
                 </div>

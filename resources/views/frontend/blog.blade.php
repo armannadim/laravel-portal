@@ -32,7 +32,8 @@
 
             <div class="row">
                 <div class="col-lg-12 text-center py-5">
-                    {{ $posts->render() }}
+                    {!! $posts->withQueryString()->links('pagination::bootstrap-5') !!}
+
                     <!--<div class="custom-navigation">
 
                         <a href="#" class="active">1</a>
